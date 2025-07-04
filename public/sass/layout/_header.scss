@@ -1,0 +1,118 @@
+@use "./../abstract/index.scss" as var;
+header {
+    background-color: var.$bg-primary;
+    .row {
+        background-color: var.$bg-white;
+        padding-bottom: 10px;
+    }
+}
+.logo img {
+    width: 100px;
+}
+.entry {
+    text-align: center;
+    color: var.$text-blue;
+}
+.sign-in {
+    background-color: var.$bg-primary;
+    margin: 0 220px 0 20px;
+    width: 80px;
+    text-align: center;
+    a, a:hover, a:active, a:focus, .btn:first-child:active, .btn:focus-visible {
+        color: var.$text-white;
+        padding: 5px 10px;
+        border: 0;
+    }
+}
+// language-menu
+.language-menu {
+    .dropdown-toggle,
+    .dropdown-toggle:active,
+    .dropdown-toggle:focus,
+    .dropdown-toggle:focus-visible,
+    .dropdown-toggle:visited,
+    .dropdown-toggle:hover,
+    .btn:first-child:active,
+    .btn.show {
+        color: var.$text-blue;
+        border: none;
+    }
+    .dropdown-menu {
+        min-width: fit-content;
+        transform: translate3d(10px, 44px, 0px) !important;
+        border: 0;
+        border-radius: 0;
+        background-color: var.$bg-primary;
+        padding: 3px 0px;
+    }
+    .dropdown-item {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        padding: 3px 10px;
+    }
+    .dropdown-item:hover,
+    .dropdown-item:focus,
+    .dropdown-item:active {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+    }
+}
+
+// custom-menu
+.custom-menu {
+    .custom-dropdown-toggle,
+    .custom-dropdown-toggle:active,
+    .custom-dropdown-toggle:focus,
+    .custom-dropdown-toggle:focus-visible,
+    .custom-dropdown-toggle:visited,
+    .custom-dropdown-toggle:hover,
+    .btn:first-child:active,
+    .btn.show {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+    }
+    .custom-dropdown-toggle {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        border-radius: 0;
+        border: 0;
+        padding: 5px 10px;
+        // max-width: 180px;
+        span {
+            display: inline-block;
+            max-width: 140px;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    }
+    .custom-dropdown-menu {
+        width: 220px;
+        right: 0px; 
+        top: 44px;
+        background-color: var.$bg-primary;
+        padding: 5px 0;
+    }
+    .custom-dropdown-item {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        padding: 3px 5px;
+        text-decoration: none;
+    }
+}
+@media only screen and (max-width: 767.9px) {
+    .sign-in {
+        margin: 0;
+    }
+    .custom-menu {
+        .custom-dropdown-menu {
+            right: 0px;
+        }
+    }
+}
+@media only screen and (max-width: 575.9px) {
+    .custom-menu {
+        .custom-dropdown-menu {
+            right: 0px;
+        }
+    }
+}

@@ -1,0 +1,349 @@
+.container {
+  width: 70%;
+  margin: auto;
+  max-width: 70%;
+}
+
+aside.index {
+  text-align: justify;
+}
+
+.custom-black-text {
+  color: #3b434e;
+}
+
+@media only screen and (max-width: 1199.9px) {
+  .container {
+    width: 80%;
+    margin: auto;
+    max-width: 80%;
+  }
+}
+@media only screen and (max-width: 991.9px) {
+  .container {
+    width: 100%;
+    margin: auto;
+    max-width: 100%;
+  }
+  aside.speakers {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767.9px) {
+  h2 {
+    text-align: center;
+  }
+}
+body {
+  font-family: "Inter";
+}
+
+.entry {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sign-in {
+  font-size: 0.7rem;
+}
+
+.dropdown-item, .dropdown-toggle {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-item {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+menu .list-group {
+  font-size: 1.1rem;
+}
+
+.footer {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.navbar {
+  background-color: #546da5;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 25px;
+}
+.nav-item a, .nav-item a.active {
+  color: #ffffff !important;
+}
+
+@media only screen and (max-width: 1030px) {
+  .nav-item:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+menu .list-group a {
+  color: #546da5;
+}
+
+menu .list-group-item:hover {
+  color: #546da5;
+}
+
+.list-group-item-action:not(.active):hover,
+.list-group-item-action:not(.active):active,
+.list-group-item-action:not(.active):focus {
+  color: #546da5;
+}
+
+.list-group-item-action:not(.active):hover {
+  background-color: #eeeff0;
+}
+
+header {
+  background-color: #546da5;
+}
+header .row {
+  background-color: #ffffff;
+  padding-bottom: 10px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.entry {
+  text-align: center;
+  color: #546da5;
+}
+
+.sign-in {
+  background-color: #546da5;
+  margin: 0 220px 0 20px;
+  width: 80px;
+  text-align: center;
+}
+.sign-in a, .sign-in a:hover, .sign-in a:active, .sign-in a:focus, .sign-in .btn:first-child:active, .sign-in .btn:focus-visible {
+  color: #ffffff;
+  padding: 5px 10px;
+  border: 0;
+}
+
+.language-menu .dropdown-toggle,
+.language-menu .dropdown-toggle:active,
+.language-menu .dropdown-toggle:focus,
+.language-menu .dropdown-toggle:focus-visible,
+.language-menu .dropdown-toggle:visited,
+.language-menu .dropdown-toggle:hover,
+.language-menu .btn:first-child:active,
+.language-menu .btn.show {
+  color: #546da5;
+  border: none;
+}
+.language-menu .dropdown-menu {
+  min-width: fit-content;
+  transform: translate3d(10px, 44px, 0px) !important;
+  border: 0;
+  border-radius: 0;
+  background-color: #546da5;
+  padding: 3px 0px;
+}
+.language-menu .dropdown-item {
+  color: #ffffff;
+  background-color: #546da5;
+  padding: 3px 10px;
+}
+.language-menu .dropdown-item:hover,
+.language-menu .dropdown-item:focus,
+.language-menu .dropdown-item:active {
+  color: #ffffff;
+  background-color: #546da5;
+}
+
+.custom-menu .custom-dropdown-toggle,
+.custom-menu .custom-dropdown-toggle:active,
+.custom-menu .custom-dropdown-toggle:focus,
+.custom-menu .custom-dropdown-toggle:focus-visible,
+.custom-menu .custom-dropdown-toggle:visited,
+.custom-menu .custom-dropdown-toggle:hover,
+.custom-menu .btn:first-child:active,
+.custom-menu .btn.show {
+  color: #ffffff;
+  background-color: #546da5;
+}
+.custom-menu .custom-dropdown-toggle {
+  color: #ffffff;
+  background-color: #546da5;
+  border-radius: 0;
+  border: 0;
+  padding: 5px 10px;
+}
+.custom-menu .custom-dropdown-toggle span {
+  display: inline-block;
+  max-width: 140px;
+  line-height: 1;
+  vertical-align: middle;
+}
+.custom-menu .custom-dropdown-menu {
+  width: 220px;
+  right: 0px;
+  top: 44px;
+  background-color: #546da5;
+  padding: 5px 0;
+}
+.custom-menu .custom-dropdown-item {
+  color: #ffffff;
+  background-color: #546da5;
+  padding: 3px 5px;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .sign-in {
+    margin: 0;
+  }
+  .custom-menu .custom-dropdown-menu {
+    right: 0px;
+  }
+}
+@media only screen and (max-width: 575.9px) {
+  .custom-menu .custom-dropdown-menu {
+    right: 0px;
+  }
+}
+.footer {
+  background-color: #546da5;
+  color: #ffffff;
+}
+
+.poster img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media only screen and (max-width: 575.9px) {
+  .poster img {
+    height: 200px;
+  }
+}
+.speaker-card img {
+  object-fit: cover;
+  object-position: top;
+  border: 1px solid gray;
+  width: 200px;
+  max-width: 100%;
+  height: 200px;
+}
+
+@media only screen and (max-width: 991.9px) {
+  .speaker-card div div:not(:first-child) {
+    width: 450px;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 767.9px) {
+  .speaker-card div div:not(:first-child) {
+    width: 100%;
+  }
+}
+.accommodation-card img {
+  width: 400px;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media only screen and (max-width: 575.9px) {
+  .social-program .images img {
+    height: 150px;
+  }
+}
+.social-program .images img {
+  display: inline-block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1199.9px) {
+  .social-program .images img {
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 991.9px) {
+  .social-program .images img {
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 767.9px) {
+  .social-program .images img {
+    height: 300px;
+  }
+}
+.sponsors .sponsor-card img {
+  width: 160px;
+  height: 160px;
+}
+
+.login .login-action a, .login .registr-action a {
+  padding: 5px 0;
+  display: inline-block;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.login .login-action a {
+  background-color: #ffffff;
+  color: #546da5;
+}
+.login .registr-action a {
+  background-color: #546da5;
+  color: #ffffff;
+}
+.login form button,
+.login form button:hover,
+.login form button:active,
+.login form button:focus,
+.login form button:focus-visible,
+.login .btn:first-child:active {
+  color: #ffffff;
+  background-color: #546da5;
+  border: 0;
+}
+
+.registr .login-action a, .registr .registr-action a {
+  padding: 5px 0;
+  display: inline-block;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.registr .login-action a {
+  background-color: #546da5;
+  color: #ffffff;
+}
+.registr .registr-action a {
+  background-color: #ffffff;
+  color: #546da5;
+}
+.registr form button,
+.registr form button:hover,
+.registr form button:active,
+.registr form button:focus,
+.registr form button:focus-visible,
+.registr .btn:first-child:active {
+  color: #ffffff;
+  background-color: #546da5;
+  border: 0;
+}
+
+.conference-venue img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */

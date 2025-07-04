@@ -1,0 +1,34 @@
+@use "./../abstract/index.scss" as var;
+.login {
+    .login-action, .registr-action {
+    a {
+        padding: 5px 0;
+        display: inline-block;
+        width: 100%;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+    }
+    .login-action {
+        a {
+            background-color: var.$bg-white;        
+            color: var.$text-blue;
+        }
+    }
+    .registr-action {
+        a {
+            background-color: var.$bg-primary;
+            color: var.$text-white;
+        }
+    }
+    form button,
+    form button:hover,
+    form button:active,
+    form button:focus,
+    form button:focus-visible,
+    .btn:first-child:active {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        border: 0;
+    }
+}

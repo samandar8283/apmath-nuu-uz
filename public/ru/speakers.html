@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конференция</title>
+    <link rel="icon" href="./../assets/media/images/generals/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../assets/css/styles.css">
+</head>
+<body>
+    <!-- /Header start -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 logo ps-4 pt-2 text-center text-sm-start">
+                    <img src="./../assets/media/images/generals/logo.png" alt="Logo">
+                </div>
+                <div class="col-sm-9">
+                    <h1 class="d-none">Конференция Аль-Хорезми</h1>
+                    <p class="entry p-4">IX-Международная научная конференция «Актуальные проблемы прикладной математики и информационных технологий – Аль-Хорезми 2024» 22-23 октябрь. Ташкент.</p>
+                </div>
+                <div class="d-flex justify-content-evenly d-md-block position-relative">
+                    <div class="sign-in d-inline-block">
+                        <a class="btn" href="./auth/login.html">Вход</a>
+                    </div>
+                    <div class="language-menu d-inline-block">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">RU</button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item language" id="uz">UZ</button></li>
+                                <li><button class="dropdown-item language" id="en">EN</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="custom-menu d-inline-block d-md-none">
+                        <div class="custom-dropdown">
+                            <button class="btn custom-dropdown-toggle">
+                                <span class="text-truncate">Приглашенные Спикеры</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                </svg>
+                            </button>
+                            <ul class="custom-dropdown-menu position-absolute list-unstyled d-none">
+                                <li><a href="./index.html" class="custom-dropdown-item px-2 py-1 d-block">Главная</a></li>
+                                <li><a href="./organizers.html" class="custom-dropdown-item px-2 py-1 d-block">Организаторы</a></li>
+                                <li><a href="./speakers.html" class="custom-dropdown-item px-2 py-1 d-block">Приглашенные Спикеры</a></li>
+                                <li><a href="./participants.html" class="custom-dropdown-item px-2 py-1 d-block">Участники</a></li>
+                                <li><a href="./important-dates.html" class="custom-dropdown-item px-2 py-1 d-block">Важные даты</a></li>
+                                <li><a href="./auth/registr.html" class="custom-dropdown-item px-2 py-1 d-block">Регистрация</a></li>
+                                <li><a href="./sections.html" class="custom-dropdown-item px-2 py-1 d-block">Разделы</a></li>
+                                <li><a href="./submission.html" class="custom-dropdown-item px-2 py-1 d-block">Правила оформления</a></li>
+                                <li><a href="./conference-venue.html" class="custom-dropdown-item px-2 py-1 d-block">Место проведения</a></li>
+                                <li><a href="./accommodation.html" class="custom-dropdown-item px-2 py-1 d-block">Размещение</a></li>
+                                <li><a href="./social-program.html" class="custom-dropdown-item px-2 py-1 d-block">Социальная программа</a></li>
+                                <li><a href="./conference-fees.html" class="custom-dropdown-item px-2 py-1 d-block">Сборы за конференцию</a></li>
+                                <li><a href="./program.html" class="custom-dropdown-item px-2 py-1 d-block">Программа</a></li>
+                                <li><a href="./sponsors.html" class="custom-dropdown-item px-2 py-1 d-block">Спонсоры</a></li>
+                                <li><a href="./contacts.html" class="custom-dropdown-item px-2 py-1 d-block">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /Header end -->
+    
+    <main>
+        <div class="container p-0">
+            <!-- Navbar start -->
+            <nav class="navbar navbar-expand d-none d-md-flex">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./organizers.html">Организаторы</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./speakers.html">Приглашенные Спикеры</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./participants.html">Участники</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- /Navbar end -->
+
+            <div class="row mt-3 mx-0">
+                <div class="col-md-4 d-none d-md-block">
+                    <menu class="m-0 p-0">
+                        <div class="list-group rounded-0">
+                            <a href="./important-dates.html" class="list-group-item list-group-item-action bordered">Важные даты</a>
+                            <a href="./auth/registr.html" class="list-group-item list-group-item-action bordered">Регистрация</a>
+                            <a href="./sections.html" class="list-group-item list-group-item-action bordered">Разделы</a>
+                            <a href="./submission.html" class="list-group-item list-group-item-action bordered">Правила оформления</a>
+                            <a href="./conference-venue.html" class="list-group-item list-group-item-action bordered">Место проведения</a>
+                            <a href="./accommodation.html" class="list-group-item list-group-item-action bordered">Размещение</a>
+                            <a href="./social-program.html" class="list-group-item list-group-item-action bordered">Социальная программа</a>
+                            <a href="./conference-fees.html" class="list-group-item list-group-item-action bordered">Сборы за конференцию</a>
+                            <a href="./program.html" class="list-group-item list-group-item-action bordered">Программа</a>
+                            <a href="./sponsors.html" class="list-group-item list-group-item-action bordered">Спонсоры</a>
+                            <a href="./contacts.html" class="list-group-item list-group-item-action bordered">Контакты</a>
+                        </div>
+                    </menu>
+                </div>
+
+                <div class="col-md-8">
+                    <aside class="speakers custom-black-text">
+                        <h2 class="page-heading fw-bold custom-black-text fs-3 mb-4">Приглашенные Спикеры</h2>
+
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-1.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Siddheshwar Pradeep Ganapathis</b> - Старший профессор и директор научно-исследовательского отдела Центра математических проблем
+                                    </p>
+                                    <p class="lh-sm speaker-state">Университет Христа, Бангалор, Индия.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-2.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Ashurov Ravshan Radjabovich</b> - Институт математики имени В. И. Романовского Академии наук Республики Узбекистан
+                                    </p>
+                                    <p class="lh-sm speaker-state"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-3.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Sadullaev Azimbay</b> - Доктор физико-математических наук, профессор, академик Академии наук Республики Узбекистан. Национальный университет Узбекистана
+                                    </p>
+                                    <p class="lh-sm speaker-state"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-4.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Michael Ruzhansky</b> - Анализ, уравнение в частных производных
+                                    </p>
+                                    <p class="lh-sm speaker-state">Старший профессор математики Гентского университета и профессор математики Лондонского университета королевы Марии</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-5.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Mitsuru Sugimoto</b> - Уравнения в частных производных, анализ Фурье.
+                                    </p>
+                                    <p class="lh-sm speaker-state">Нагойский университет | Мэйдай · Математический факультет. Япония</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-6.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Sakriani SAKTI</b> - Компьютерная лингвистика и искусственный интеллект
+                                    </p>
+                                    <p class="lh-sm speaker-state">Руководитель лаборатории исследований взаимодействия человека и искусственного интеллекта (HAI) университета NAIST, профессор, Япония</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-7.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Patrick PAROUBEK</b> - Компьютерная лингвистика и искусственный интеллект
+                                    </p>
+                                    <p class="lh-sm speaker-state">Инженер-исследователь, LISN, CNRS, профессор, Франция</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-8.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Joseph MARIANI</b> - Компьютерная лингвистика и искусственный интеллект
+                                    </p>
+                                    <p class="lh-sm speaker-state">Почетный директор по исследованиям CNRS, профессор, Франция</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-9.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Ashyralyev Allaberen</b> - Частный дифференциал уравнения, прикладная математика, численный функциональный анализ
+                                    </p>
+                                    <p class="lh-sm speaker-state">Университет Бахчешехир, факультет инженерии и естественных наук. Турция</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-10.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Dr. Zygmunt Wladyslaw Vetulani</b> - Профессор Университета Адама Мицкевича, факультет математики и информатики
+                                    </p>
+                                    <p class="lh-sm speaker-state"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-11.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Ayupov Shavkat Abdullaevich</b> - Институт математики имени В. И. Романовского Академии наук Республики Узбекистан
+                                    </p>
+                                    <p class="lh-sm speaker-state">Академик Академии наук Узбекистана</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-12.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Kozhanov Alexander Ivanovich</b> - Профессор
+                                    </p>
+                                    <p class="lh-sm speaker-state">Математический центр в Академгородке, Институт математики им. С.Л. Соболева СО РАН, Новосибирск, Россия.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-13.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Ekrem Savas</b> - Математический анализ
+                                    </p>
+                                    <p class="lh-sm speaker-state">Профессор, Ректор Университета Ушак, Турция</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-14.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Ilolov Mamadsho Ilolovich</b> - Математика, Дифференциальные уравнения
+                                    </p>
+                                    <p class="lh-sm speaker-state">Академик Академии наук Республики Таджикистан</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-15.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Alimov Shavkat Arifjanovich</b> - Институт математики имени В.И. Романовского Академии наук Республики Узбекистан
+                                    </p>
+                                    <p class="lh-sm speaker-state">Академик Академии наук Узбекистана</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speaker-card mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4">
+                                    <img src="./../assets/media/images/speakers/speaker-16.png" alt="speaker">
+                                </div>
+                                <div class="mt-2 mt-lg-0 col-lg-8">
+                                    <p class="lh-sm speaker-name">
+                                        <b>Aripov Mersaid</b> - Профессор Национального университета Узбекистана, факультет прикладной математики и интеллектуальных технологий
+                                    </p>
+                                    <p class="lh-sm speaker-state"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer start -->
+    <footer class="footer py-4 mt-3">
+        <div class="container">
+            <p class="m-0 ps-3">IX-Международная научная конференция «Актуальные проблемы прикладной <br>  математики и информационных технологий – Аль-Хорезми 2024»</p>
+        </div>
+    </footer>
+    <!-- /Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="./../assets/js/en-ru-scripts.js"></script>
+    <script src="./../assets/js/main.js"></script>
+</body>
+</html>

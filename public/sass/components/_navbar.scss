@@ -1,0 +1,17 @@
+@use "./../abstract/index.scss" as var;
+.navbar {
+    background-color: var.$bg-primary;
+}
+.nav-item {
+    &:not(:last-child) {
+        margin-right: 25px;
+    }
+    a, a.active {
+        color: var.$text-white !important;
+    }
+}
+@media only screen and (max-width: 1030px) {
+    .nav-item:not(:last-child) {
+        margin-right: 15px;
+    }
+}

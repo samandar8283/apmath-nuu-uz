@@ -1,0 +1,17 @@
+@use "./../abstract/index.scss" as var;
+menu .list-group {
+    a {
+        color: var.$text-blue;
+    }
+}
+menu .list-group-item:hover {
+    color: var.$text-blue;
+}
+.list-group-item-action:not(.active):hover,
+.list-group-item-action:not(.active):active,
+.list-group-item-action:not(.active):focus {
+    color: var.$text-blue;
+}
+.list-group-item-action:not(.active):hover {
+    background-color: #eeeff0;
+}

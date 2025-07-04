@@ -1,0 +1,33 @@
+body {
+    font-family: "Inter";
+}
+.entry {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.sign-in {
+    font-size: 0.7rem;
+}
+.dropdown-item, .dropdown-toggle {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+// navbar
+.nav-item {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+// menu
+menu .list-group {
+    font-size: 1.1rem;
+}
+
+// footer
+.footer {
+    font-size: 0.8rem;
+    line-height: 1.4;
+}

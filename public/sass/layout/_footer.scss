@@ -1,0 +1,5 @@
+@use "./../abstract/index.scss" as var;
+.footer {
+    background-color: var.$bg-primary;
+    color: var.$text-white;
+}
