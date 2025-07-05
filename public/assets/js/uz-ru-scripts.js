@@ -6,7 +6,7 @@ document.querySelectorAll(".language[id]").forEach(function(langBtn) {
 
         // if (!pageClass) return;
 
-        let langPath = selectedLang === "uz" ? "./../" : "./../" + selectedLang + "/";
+        let langPath = selectedLang === "en" ? "./../" : "./../" + selectedLang + "/";
         let targetUrl = langPath + pageClass + ".html";
 
         window.location.href = targetUrl;

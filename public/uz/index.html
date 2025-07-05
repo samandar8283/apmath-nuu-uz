@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Xorazmiy</title>
+    <link rel="icon" href="./../assets/media/images/generals/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./../assets/css/styles.css">
+</head>
+<body>
+    <!-- /Header start -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 logo ps-4 pt-2 text-center text-sm-start">
+                    <img src="./../assets/media/images/generals/logo.png" alt="Logo">
+                </div>
+                <div class="col-sm-9">
+                    <h1 class="d-none">Al-Xorazmiy konferensiyasi</h1>
+                    <p class="entry p-4">IX Xalqaro ilmiy "Amaliy matematika va axborot texnologiyalarining dolzarb muammolari" - Al-Xorazmiy 2024" konferensiyasi. 22-23 oktabr. Toshkent.</p>
+                </div>
+                <div class="d-flex justify-content-evenly d-md-block position-relative">
+                    <div class="sign-in d-inline-block">
+                        <a class="btn" href="./auth/login.html">Kirish</a>
+                    </div>
+                    <div class="language-menu d-inline-block">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">UZ</button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item language" id="en">EN</button></li>
+                                <li><button class="dropdown-item language" id="ru">RU</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="custom-menu d-inline-block d-md-none">
+                        <div class="custom-dropdown">
+                            <button class="btn custom-dropdown-toggle">
+                                <span class="text-truncate">Bosh sahifa</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                </svg>
+                            </button>
+                            <ul class="custom-dropdown-menu position-absolute list-unstyled d-none">
+                                <li><a href="./index.html" class="custom-dropdown-item px-2 py-1 d-block">Bosh sahifa</a></li>
+                                <li><a href="./organizers.html" class="custom-dropdown-item px-2 py-1 d-block">Tashkilotchilar</a></li>
+                                <li><a href="./speakers.html" class="custom-dropdown-item px-2 py-1 d-block">Ma'ruzachilar</a></li>
+                                <li><a href="./participants.html" class="custom-dropdown-item px-2 py-1 d-block">Ishtirokchilar</a></li>
+                                <li><a href="./important-dates.html" class="custom-dropdown-item px-2 py-1 d-block">Muhim sanalar</a></li>
+                                <li><a href="./auth/registr.html" class="custom-dropdown-item px-2 py-1 d-block">Ro'yxatdan o'tish</a></li>
+                                <li><a href="./sections.html" class="custom-dropdown-item px-2 py-1 d-block">Bo'limlar</a></li>
+                                <li><a href="./submission.html" class="custom-dropdown-item px-2 py-1 d-block">Tezislar topshirish shartlari</a></li>
+                                <li><a href="./conference-venue.html" class="custom-dropdown-item px-2 py-1 d-block">Konferensiya o'tkazish joyi</a></li>
+                                <li><a href="./accommodation.html" class="custom-dropdown-item px-2 py-1 d-block">Turar joy</a></li>
+                                <li><a href="./social-program.html" class="custom-dropdown-item px-2 py-1 d-block">Ijtimoiy dastur</a></li>
+                                <li><a href="./conference-fees.html" class="custom-dropdown-item px-2 py-1 d-block">Konferentsiya to'lovlari</a></li>
+                                <li><a href="./program.html" class="custom-dropdown-item px-2 py-1 d-block">Dastur</a></li>
+                                <li><a href="./sponsors.html" class="custom-dropdown-item px-2 py-1 d-block">Homiylar</a></li>
+                                <li><a href="./contacts.html" class="custom-dropdown-item px-2 py-1 d-block">Kontaktlar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /Header end -->
+    
+    <main>
+        <div class="container p-0">
+            <div class="poster">
+                <img src="./../assets/media/images/generals/header-background.png" alt="Poster image">
+            </div>
+            <!-- Navbar start -->
+            <nav class="navbar navbar-expand d-none d-md-flex">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Bosh sahifa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./organizers.html">Tashkilotchilar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./speakers.html">Ma'ruzachilar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./participants.html">Ishtirokchilar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- /Navbar end -->
+
+            <div class="row mt-3 mx-0">
+                <div class="col-md-4 d-none d-md-block">
+                    <menu class="m-0 p-0">
+                        <div class="list-group rounded-0">
+                            <a href="./important-dates.html" class="list-group-item list-group-item-action bordered">Muhim sanalar</a>
+                            <a href="./auth/registr.html" class="list-group-item list-group-item-action bordered">Ro'yxatdan o'tish</a>
+                            <a href="./sections.html" class="list-group-item list-group-item-action bordered">Bo'limlar</a>
+                            <a href="./submission.html" class="list-group-item list-group-item-action bordered">Tezislar topshirish shartlari</a>
+                            <a href="./conference-venue.html" class="list-group-item list-group-item-action bordered">Konferensiya o'tkazish joyi</a>
+                            <a href="./accommodation.html" class="list-group-item list-group-item-action bordered">Turar joy</a>
+                            <a href="./social-program.html" class="list-group-item list-group-item-action bordered">Ijtimoiy dastur</a>
+                            <a href="./conference-fees.html" class="list-group-item list-group-item-action bordered">Konferentsiya to'lovlari</a>
+                            <a href="./program.html" class="list-group-item list-group-item-action bordered">Dastur</a>
+                            <a href="./sponsors.html" class="list-group-item list-group-item-action bordered">Homiylar</a>
+                            <a href="./contacts.html" class="list-group-item list-group-item-action bordered">Kontaktlar</a>
+                        </div>
+                    </menu>
+                </div>
+
+                <div class="col-md-8">
+                    <aside class="index">
+                        <h2 class="page-heading fw-bold custom-black-text fs-3 mb-4">Bosh sahifa</h2>
+
+                        <p><i>Qadrli hamkasblar,</i></p>
+
+                        <p>Mirzo Ulugʼbek nomli Oʼzbekiston Milliy universiteti, Toshkent Davlat Transport universiteti, OʼzR FА Matematika instituti navbatdagi IX xalqaro ilmiy “Аmaliy matematika va axborot texnologiyalarning dolzarb muammolari – Аl-Xorazmiy 2024” shuningdek Mirzo Ulugʻbek tavalludining 630 yilligiga bag'ishlangan ilmiy konferensiyasini Toshkent shahrida O'zbekiston Milliy universiteti Amaliy matematika va intellektual texnologiyalar fakultetida 2024 yil 22–23 oktabr kunlari oʼtkazishni rejalashtirdi.</p>
+
+                        <a class="d-block text-center fs-3 fw-bold" href="https://drive.google.com/drive/folders/1fxfbxIGC_Lb1TaBCOqbtudi1hFJ10bvN?usp=sharing">Tezislar to'plami</a>
+                        <a class="d-block text-center fs-4 fw-bold" href="https://drive.google.com/drive/folders/14100Zb9QIrMmyFyXWMJsclIYTcyPkbgG?usp=sharing">Konferensiya rasmlari</a>
+
+                        <h3 class="fs-6 fw-bold text-center mt-3 custom-black-text">Konferensiya maqsadi</h3>
+                        <p>Ulug‘ allomalar Muso Аl-Xorazmiy va Mirzo Ulug'beklarning ilmiy merosini o‘rganish va targ‘ib qilish, amaliy matematika, axborot texnologiyalari, matematika va uning turli yo‘nalishlarida erishilgan yutuqlarning bugungi holati va rivojlanish istiqbollarini muhokama qilish, konferentsiyaga iqtidorli yoshlarni jalb etish, turli mamlakatlar olimlari o‘rtasida yaqin ilmiy aloqalar o‘rnatish konferensiyanig asosiy maqsadidir.</p>
+
+                        <h3 class="fs-6 fw-bold text-center mt-3 custom-black-text">Konferensiyaning qisqacha tarixi</h3>
+                        <p>Konferensiya 90-yillarning oxiridan boshlab mamlakatimizning turli viloyatlarining oliygohlarida o‘tkazilib kelinmoqda. Oxirgi marta 2023 yil boshida Samarqand shahrining Samarqand Davlat universitetida o‘tkazildi. Undan oldingi yillarda Farg‘ona, Buxoro va Toshkent kabi shaharlarda o‘tkazilgan. Ushbu konferensiyalarga Buxoro Davlat universiteti, Farg‘ona politexnika universiteti va O‘zbekiston Milliy Universitetlari mezbonlik qilishgan. Konferensiya har safar online va offline shakllarda o‘tkazilgan. Unda mamlakatimizning yetuk soha mutahasislari bilan bir qatorda jahonda tanilgan olimlar ham qatnashishgan.</p>
+                        <p>
+                            <b>E-mail:</b>
+                            <a href="mailto:alkhorazmiy2024@gmail.com">alkhorazmiy2024@gmail.com</a>
+                        </p>
+                        <p>
+                            <b>Konferensiya tili:</b>
+                            <span>oʼzbek, rus, ingliz tillari.</span>
+                        </p>
+                        <p>
+                            <b>Konfirensiya rejimi:</b>
+                            <span>online, offline.</span>
+                        </p>
+
+                        <h3 class="fs-6 fw-bold text-center mt-3 custom-black-text">Konferensiya hamkorlari</h3>
+                        <p>Xalqaro Nordik universiteti,</p>
+                        <p>Aniq va ijtimoiy fanlar universiteti,</p>
+                        <p>Turk dunyosi matematiklar jamiyati.</p>
+
+                        <h3 class="mt-4 mb-3 fs-5 fw-bold text-center mt-3 custom-black-text">Abu Abdulloh Muhammad ibn Muso al-Xorazmiy</h3>
+                        <p>O‘zining daho kashfiyotlari bilan dunyo ilm-faniga bebaho hissa qo‘shgan olim  - Muhammad al-Xorazmiydir. 800 yillarning boshlarida Xurosonning Bog‘doddagi hokimi - Ma’mun ibn Xorun ar-Rashidning saroyiga taklif qilinganligini inobatga olgan holda, u ona yurti Xorazmda ta’lim olib, yigirma yoshlaridayoq mashhur olim bo‘lib ulgurgan. 813 yilda Ma’mun xaliflik tojini egallaydi va Marvda atrofiga yig‘ilgan olimlar bilan birga Bog‘dodga ko‘chib o‘tadi. Fanning yirik ishqivozi Ma’mun ilm-fan tarixida “Bog‘dod akademiyasi” deb nomlanmish “Bayt al-hikma”ga (“Donolik uyi”) asos soladi. Muhammad al-Хorazmiy umrining oxirigacha ushbu ilmiy markaz boshqaruvchisi bo‘lgan. Bu yerda Markaziy Osiyo mamlakatlaridan kelgan arab Sharqining ko‘plab olimlari ham faoliyat ko‘rsatgan. Ular uchun qadimiy qo‘lyozmalarga boy kutubxona hamda maxsus qurilgan observatoriya xizmat ko‘rsatgan.</p>
+                        <p>Muhammad al-Xorazmiy 20 dan ziyod ilmiy asarlar muallifi bo‘lgan, ulardan 7 tasi bizning davrimizgacha saqlanib qolgan. Jumladan:</p>
+                        <ul>
+                            <li class="mb-2">“Fi xisab al-Xind” (arab tilidagi “Hindcha hisob haqida kitob”) – o’nlik pozitsion hisoblash tizimini ifodalovchi va nol belgisi bor, to‘qqizta raqamni bayon etuvchi asar.</li>
+                            <li class="mb-2">“Al-kitob al-muxtasar fi hisob al-jabr va al-muqobala”. (Arab tilida yozilgan “Al-jabr va al-muqobala hisobi haqida qisqacha kitob”) - muallif tomonidan algebra fan sifatida ko‘rilib, “Algebra” deb nom olgan kitob.</li>
+                            <li class="mb-2">Ziji al-Xorazmiy (arab tilida yozilgan (“Zij”) “Astronomik jadval”) - sinuslarning trigonometrik funksiyalari keltirilgan kichik nazariy bo‘lim va jadvallardan tashkil topgan asar.</li>
+                            <li class="mb-2">“Kitob surat al-arz” (arab tilida yozilgan “Yer surati kitobi”) - O‘rta asrlarda ilk bor odamzod yashayotgan yer sayyorasining sharqiy yarmi, undagi mamlakatlar, Tinch okeani (Baxr al-muzallam) hamda sayyoramiz xaritasi keltirilgan geografik risola.</li>
+                        </ul>
+                        <p>Muhammad al-Xorazmiy matematika, astronomiya va geografiya fanlariga, ular orqali sivilizatsiya rivojiga umumiy qo‘shgan muhim hissasi:</p>
+                        <ol>
+                            <li class="mb-2">O’nlik pozitsion hisobni ifodalovchi, nol belgisi bor to‘qqizta raqamni bayon etuvchi sanoq tizimiga asos solgan.</li>
+                            <li class="mb-2">Fan sifatida Algebrani yaratdi va unga shu nomni berdi.</li>
+                            <li class="mb-2">Yevropa adabiyotida “Algoritm” deya nom olgan aniq va tushunarli qoidalar orqali ilmiy va ta’limiy asarlarning yangi usulini ishlab chiqdi va ularni yo‘lga qo‘ydi. Lotin tilida “algoritm” talaffuzi uning ismi - al-Xorazmiyga tenglashadi. Mazkur - algoritm tushunchasi butun zamonaviy raqamli axborot va kompyuter texnologiyalari tushunchasi asosini tashkil qiladi. Aynan ushbu usul orqali Muhammal al-Xorazmiy asarlarining bayoni keng ommaga tarqalgan. Yuqorida keltirilgan xizmatlari bilan bir qatorda, hozirgi kunda ma’lum bo‘lishicha, u qutb nuqtalaridan foydalangan.</li>
+                            <li class="mb-2">Muhammad al-Xorazmiyning (“Ziji”) Astronomik kitobida Quyosh, Oy, beshta sayyora, matematik geografiya masalalari, trigonometriya, Quyosh va Oyning tutilishi kabilar ko‘rib chiqilgan. 1126 yil kitob lotin tiliga, 1914 yili nemis, 1962 yili ingliz tiliga tarjima qilingan.</li>
+                            <li class="mb-2">Muhammad al-Xorazmiyning geografiya asarlarida yerning o‘sha vaqtlardagi ma’lum joylari bayon qilingan. Asarda joylar aniq xarita, u yerdagi daryo, dengiz va okeanlari, soni 2402 ga yetuvchi muhim aholi soni bilan keltirilgan. Bu - O‘rta asrlarda yozilgan arab tilidagi ilk jo‘g‘rofiy asar bo‘lgan. Mazkur iqlim nazariyasi aytarli darajada jo‘g‘rofiya rivojida muhim o‘rin tutgan.</li>
+                        </ol>
+                        <p>Muhammad al-Xorazmiyning matematika va umuman, sivilizatsiya rivojidagi hissasi e’tirofga olingan, “algoritm”ga muhrlangan uning ismi va asarlaridan biridagi “algoritm” atamasi Sharq olimlari orasida u yagonaligining isbotidir. Olimning daholigini e’tirof etarkanmiz, al-Xorazmiyga ilm tarixida berilgan eng to‘g‘ri baho amerikalik tarixchi Dj.Sarton tomonidan bo‘lgan: “...zamonasining eng buyuk matematigi, barcha sharoitlarni hisobga olgan holda, barcha zamonning eng buyuk olimlaridan biri”!</p>
+
+                        <h3 class="mt-4 mb-3 fs-5 fw-bold text-center mt-3 custom-black-text">Mirzo Ulug‘bek</h3>
+                        <p>Ulug‘bek (Muhammad Tarag‘ay) 1394 yil 22 mart kuni hozirgi Ozarbayjon hududidagi Sultoniya shahrida tavallud topgan. Ulug‘bek u vaqtlar o‘lchovi bilan qaraganda, juda zo‘r ta’lim olgan. Ajoyib xotira egasi bo‘lib, u arab va fors tilini erkin egallagan, turk she’riyatini yaxshi bilgan, adabiy uslublarni egallagan va adabiy bahslarda ishtirok etgan. 1417-1420 yillar Ulug‘bek Samarqandda madrasa qurdirib, Registonda barpo etilgan birinchi me’moriy ansamblga aylanadi. Ushbu madrasaga Ulug‘bek islom olamining ko‘plab astronom va matematiklarini taklif etadi.Ammo Ulug‘bekning katta ishtiyoqi - bu astronomiya bo‘lgan. Ulug‘bek hayotining mazmuni va Qozizoda Rumiy, Jamshid G‘iyosiddin al Koshiy, Ali Qushchi kabi astronom izdosh-olimlar rasadxona qurilishiga turtki bo‘lgan.</p>
+                        <p>Tadqiqotchi olimlarning fikricha, rasadxona qurilishi 1428-1429 yillan yakunlangan. Rasadxona o‘z davrining nodir binosi bo‘lgan. Yer silkinishiga bardoshli bo‘lishi uchun bino qurilishi uchun Qo‘hak tepaligining toshli etagi tanlangan. Asosiy asbob - sekstant (burchak o‘lchagich) - janubdan shimol tomon meridian chiziqlari bo‘ylab mo‘ljallangan. Asosiy asbobdan tashqari, rasadxonada boshqa astronomik anjomlar ham bo‘lgan.</p>
+                        <p>Ehtimol, aniq astronomik kuzatishlarni amalga oshirishiga sekstantning o‘lchami, uning qulay tuzilishi, Ulug‘bekning bilimlari va uning sherigi sabab bo’lgan. Buyuk astronom Ulug‘bek rahbarligi va ishtirokida rasadxonaning asosiy ishi “Zidjiy Ko‘rag‘oniy”, “Ulug‘bekning yulduzlar jadvali” tuzilgan. Kitobda ushbu Samarqand observatoriyasidan 1018 ta yulduz joylashuvi aql bovar qilmas aniqlikda, Gipparxdan so‘ng ilk bor belgilangan. Astronomik turkum yaratilishi jahon astronomiya fani xazinasiga qo‘shilgan ulkan hissa hisoblanadi.Ulug‘bek o‘z ma’lumotlarini bir necha bor tekshirib, uning sonlarini to‘g‘ri, degan xulosaga keladi. 1437 yil u astronomik yil uzunligini aniqlaydi: 365 kun 6 soat 10 daqiqa 8 soniya. Keyinroq o‘zgarishlar farqi 58 soniyada ekanligi aniq bo‘lgan. Agar astronomik yil uzunligi 31 million 558 ming 150 soniya ekanligini inobatga olsa, Ulug‘bek o‘z o‘lchamlarini naqadar yuqori aniqlikda olib borganligiga amin bo’lish mumkin.Ulug‘bek hisoblab chiqqan 1018 yulduz turkumi qadimiy xronogiyani o‘rganuvchi astronomlar va tarixshunoslar uchun kompas vazifasini o‘taydi. Ulug‘bekning yulduzlar jadvali “Almagest”da keltirilgan Ptolomeyning yulduzlar xaritasining haqiqiyligini tasdiqlaydi.</p>
+                        <p>1648 yil Oksfordda — fan va madaniyatning eng qadimiy o‘choqlaridan bo‘lmish Angliyada ilk bor Ulug‘bekning mashhur Samarqand rasadxonasida amalga oshirilgan asosiy ishi qisman nashr etilgan. Ishni nashr uchun tayyorlab, unga sharh yozgan Jon Grivs (1602 - 1652), Oksford universitetining astronomiya professori. Keyinchalik, turkum lavhalari Angliyada bir necha bor chop etilgan.</p>
+                        <p>Ilk oksfordlik nashrdan 17 yil o‘tgach, olim, Oksforddagi Bodleyansk kutubxonasi qo‘riqchisi, angliyalik sharqshunos va tarjimon Tomas Xayd (1636-1703) samarqandlik nashrni fors va lotin tillarida yangi nashr uchun tayyorlab, “Tabulae Long, as Lat. Stellarum Fixarum, ex observatione Ulugh Beighi”, Oxonii nomlari ostida chop etgan, 1665.</p>
+                        <p>Ulug‘bek jadvallarining Ovrupada chop etilishi, shu o‘rinda, tuzish uchun ulkan va sermashshaq kuzatuv va hisob mehnatini talab qiluvchi o‘ziga xos yulduzlar katalogi sanoqli shaxslar tomonidan hisoblangan va osmon tadqiqotchilari tomonidan yuqori baholangan.</p>
+                        <p>Xaydning oksfordik nashridan 25 yil o‘tgach, Ulug‘bek jadvalining ma’lumotlari polyak astronomi Yan Geveliyning (1611-1687) Gdanskda chop etigan “Prodromus Astronomiae” kitobi sahifalaridan joy oladi. Bu yerda o‘z vaqtida mavjud bo‘lgan turkumlardagi ma’lumotlar o‘rtasida taqqoslash keltirilgan: Ptolemey, Tixo Brag, Richchioli, shahzoda Gass va Geveliy.</p>
+                        <p>1839 yil fransuzs sharqshunosi L.A.Sediyo (1808-1876) Ulug‘bek jadvalini “Tables astronomigue d'Oloug Beg, commentees et publiees avec le texte en regard” nomi ostida qisman chop ettiradi, I bob, I bo‘lim, Parij, 1839.</p>
+                        <p>Va, nihoyat, Buyuk Britaniya kutubxonalarida saqlangan 8 ta qo‘lyozmani o‘rganish asosidagi Ulug‘bek jadvalining aniqroq tahlili 1917 yil AQShda E. B. Nobl tomonidan “Ulugh Beg's Catalogue of Stars. Revised from all Persian Manuscripts Existing in Great Britain” nomi ostida chop etilgan.</p>
+                        <p>Aytish joizki, Ovrupa va Osiyo kitob saqlanuvchi omborlarda “Zidjiy”ning o‘nlab qo‘lyozmalari mavjud. Ulug‘bekning yulduzlar jadvali o‘rta asrlar astronomiyasining so‘ng so‘zi bo‘ldi. Mazkur jadval teleskop ixtirosidan avvalgi, o‘rta asrlar astronomiya fanining eng yuqori  poyasi bo‘ldi.</p>
+                        <p>Ulug‘bekning boy ilmiy merosi u faqatgina buyuk musulmon o‘g‘loni bo‘lmaganligini tasdiqlaydi. Ijodiy tafakkur dahosi butun insoniyat ilm-fani va sivilizatsiyasi rivojiga bebaho hissa qo‘shgan. Shu sababli, ko‘p asrlar o‘tib, hatto bugun ham Ulug‘bekning ismi savob maqsadlarga erishish niyatida Sharq va G‘arb xalqlarini birlashtirgan timsol bo‘lib qoladi.</p>
+                        <p>Mirzo Ulug‘bekning yuqori ma’naviy va sezilarli merosi dunyoning yetakchi o‘quv muassasalarida va ilmiy markazlarida o‘rganib kelinadi. O‘zbekiston Respublikasining Birinchi Prezidenti Islom Karimovning tashabbusi bilan, O‘zbekiston Milliy universiteti ushbu atoqli olim sharafiga nomlanganligi respublikaning bugungi yuqori ilmiy-ma’naviy qudratini tasdiqlaydi.</p>
+                        <p>1994 yil olim tavalludining 600 yillik yubileyi xalqaro miqyosda nishonlangan, shu sabab, xorij olimlari, mutaxassislari va jamoat arboblari ishtirokida bir qator tadbirlar o‘tkazilgan.</p>
+                        <p>2009 yil Parijda Mirzo Ulug‘bek tavalludining 615 yilligiga bag‘ishlangan xalqaro ilmiy anjuman o‘tkazilgan. Anjumanda 130 dan ziyod olimlar va turli xalqaro tashkilot vakillari ishtirok etgan.</p>
+                        <p>O‘tkazib kelinayotgan tadbirlardan butun dunyoda Mirzo Ulug‘bekning ilmiy va ma’naviy merosiga bo‘lgan qiziqish naqadar ulkanligi yaqqol ko‘rinib turibdi.</p>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer start -->
+    <footer class="footer py-4 mt-3">
+        <div class="container">
+            <p class="m-0 ps-3">IX Xalqaro Ilmiy "Amaliy matematika va axborot texnologiyalarining dolzarb muammolari" - <br>Al-Xorazmiy 2024" konferensiyasi</p>
+        </div>
+    </footer>
+    <!-- /Footer end -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="./../assets/js/uz-ru-scripts.js"></script>
+    <script src="./../assets/js/main.js"></script>
+</body>
+</html>
