@@ -162,6 +162,9 @@ header .row {
   background-color: #546da5;
 }
 
+.custom-menu {
+  z-index: 1;
+}
 .custom-menu .custom-dropdown-toggle,
 .custom-menu .custom-dropdown-toggle:active,
 .custom-menu .custom-dropdown-toggle:focus,
