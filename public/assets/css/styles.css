@@ -315,7 +315,21 @@ header .row {
   background-color: #546da5;
   border: 0;
 }
+.login #message div {
+  position: fixed;
+  text-align: center;
+  top: 88%;
+  width: fit-content;
+  padding-right: 16px;
+}
 
+@media only screen and (max-width: 767.9px) {
+  .login #message div {
+    width: 90%;
+    left: 5%;
+    top: 85%;
+  }
+}
 .registr .login-action a, .registr .registr-action a {
   padding: 5px 0;
   display: inline-block;
@@ -341,9 +355,104 @@ header .row {
   background-color: #546da5;
   border: 0;
 }
+.registr #message div {
+  position: fixed;
+  text-align: center;
+  top: 88%;
+  width: fit-content;
+  padding-right: 16px;
+}
 
+@media only screen and (max-width: 767.9px) {
+  .registr #message div {
+    width: 90%;
+    left: 5%;
+    top: 85%;
+  }
+}
 .conference-venue img {
   max-width: 100%;
+}
+
+.profile h2 {
+  position: relative;
+}
+.profile h2 button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 10px;
+  color: #ffffff;
+  background-color: #546da5;
+}
+
+#informations li span:first-child, #articles li span:first-child {
+  display: inline-block;
+  width: 150px;
+}
+
+#articles #edit-btn {
+  text-decoration: none;
+  padding: 6px 40px;
+  border-radius: 8px;
+  display: inline-block;
+  color: #ffffff;
+  background-color: #546da5;
+}
+#articles form button,
+#articles form button:hover,
+#articles form button:active,
+#articles form button:focus,
+#articles form button:focus-visible,
+#articles .btn:first-child:active {
+  color: #ffffff;
+  background-color: #546da5;
+  border: 0;
+}
+
+#add-article textarea {
+  height: 200px;
+}
+#add-article form button,
+#add-article form button:hover,
+#add-article form button:active,
+#add-article form button:focus,
+#add-article form button:focus-visible,
+#add-article .btn:first-child:active {
+  color: #ffffff;
+  background-color: #546da5;
+  border: 0;
+}
+
+.pages > div a {
+  text-decoration: none;
+  width: 96%;
+  padding: 6px 0;
+  display: inline-block;
+  color: #ffffff;
+  background-color: #546da5;
+}
+.pages .active-page a {
+  color: #546da5;
+  background-color: #ffffff;
+}
+
+#message div {
+  position: fixed;
+  text-align: center;
+  top: 88%;
+  width: fit-content;
+  padding-right: 16px;
+}
+
+@media only screen and (max-width: 767.9px) {
+  #message div {
+    width: 90%;
+    left: 5%;
+    top: 85%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

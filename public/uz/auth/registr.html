@@ -25,7 +25,7 @@
                 </div>
                 <div class="d-flex justify-content-evenly d-md-block position-relative">
                     <div class="sign-in d-inline-block">
-                        <a class="btn" href="./login.html">Kirish</a>
+                        <a class="btn" href="./login.html" id="header-sign-in">Kirish</a>
                     </div>
                     <div class="language-menu d-inline-block">
                         <div class="dropdown">
@@ -117,28 +117,101 @@
                     <aside class="registr">
                         <div class="row">
                             <div class="col-md-8">
-                                <form class="row g-3 needs-validation" novalidate>
+                                <form class="row g-3 needs-validation" novalidate id="registr-form">
                                     <div class="col-3 text-center login-action ps-2">
                                         <a href="./login.html">Kirish</a>
                                     </div>
                                     <div class="col-9 text-center registr-action pe-2">
                                         <a href="./registr.html">Ro'yxatdan o'tish</a>
                                     </div>
+                                    <div class="col-12 alert alert-info" role="alert">
+                                        Iltimos, aniq va to‘g‘ri ma’lumotlarni kiriting. Ma’lumotlaringizdan hisobni tasdiqlash va aloqa uchun foydalaniladi.
+                                    </div>
                                     <div class="col-12">
-                                        <input type="email" class="form-control" id="validationCustom03" placeholder="Email" required>
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                                         <div class="invalid-feedback">
-                                            Please provide a valid city.
+                                            Iltimos, Emailni kiriting.
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control" id="validationCustom03" placeholder="Parol" required>
+                                        <label for="firstname" class="form-label">Ism</label>
+                                        <input type="text" class="form-control" id="firstname" placeholder="Ism" required>
                                         <div class="invalid-feedback">
-                                            Please provide a valid city.
+                                            Iltimos, Ismni kiriting.
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn w-100" type="submit">Kirish</button>
+                                        <label for="lastname" class="form-label">Familiya</label>
+                                        <input type="text" class="form-control" id="lastname" placeholder="Familiya" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Familiyani kiriting.
+                                        </div>
                                     </div>
+                                    <div class="col-12">
+                                        <label for="gender" class="form-label">Jins</label>
+                                        <select class="form-select" id="gender" required>
+                                            <option selected disabled value="">Tanlang...</option>
+                                            <option value="male">Erkak</option>
+                                            <option value="female">Ayol</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Jinsni tanlang.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="institute" class="form-label">Tashkilot</label>
+                                        <input type="text" class="form-control" id="institute" placeholder="Tashkilot" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Tashkilotni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="specialty" class="form-label">Yo'nalish</label>
+                                        <input type="text" class="form-control" id="specialty" placeholder="Yo'nalish" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Yo'nalishni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="country" class="form-label">Davlat</label>
+                                        <input type="text" class="form-control" id="country" placeholder="Davlat" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Davlatni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="city" class="form-label">Shahar</label>
+                                        <input type="text" class="form-control" id="city" placeholder="Shahar" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Shaharni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Manzil</label>
+                                        <input type="text" class="form-control" id="address" placeholder="Manzil" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Manzilni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="postalcode" class="form-label">Pochta raqami</label>
+                                        <input type="text" class="form-control" id="postalcode" placeholder="Pochta raqami" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Pochta raqamini kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label">Telefon raqam</label>
+                                        <input type="text" class="form-control" id="phone" placeholder="Telefon raqam" required>
+                                        <div class="invalid-feedback">
+                                            Iltimos, Telefon raqamni kiriting.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn w-100" type="submit">Ro'yxatdan o'tish</button>
+                                    </div>
+                                    <div class="col-12" id="message"></div>
                                 </form>
                             </div>
                         </div>
@@ -172,6 +245,107 @@
             });
         });
     </script>
-    <script src="./../../assets/js/main.js"></script>
+    <script src="./../../assets/js/main-auth.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const registrForm = document.getElementById("registr-form");
+            const first_nameInput = document.getElementById("firstname")
+            const last_nameInput = document.getElementById("lastname")
+            const genderInput = document.getElementById("gender")
+            const instituteInput = document.getElementById("institute")
+            const specialtyInput = document.getElementById("specialty")
+            const countryInput = document.getElementById("country")
+            const cityInput = document.getElementById("city")
+            const addressInput = document.getElementById("address")
+            const postal_codeInput = document.getElementById("postalcode")
+            const phoneInput = document.getElementById("phone")
+            const emailInput = document.getElementById("email")
+            const messageBox = document.getElementById("message");
+
+            registrForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Submitni to‘xtatamiz
+
+                // Bootstrap validatsiyasi
+                registrForm.classList.add("was-validated");
+                if (!registrForm.checkValidity()) {
+                    return;
+                }
+
+                const first_name = first_nameInput.value;
+                const last_name = last_nameInput.value;
+                const gender = genderInput.value;
+                const institute = instituteInput.value;
+                const specialty = specialtyInput.value;
+                const country = countryInput.value;
+                const city = cityInput.value;
+                const address = addressInput.value;
+                const postal_code = postal_codeInput.value;
+                const phone = phoneInput.value;
+                const email = emailInput.value;
+                console.log(first_name);
+
+                fetch("http://127.0.0.1:8000/api/signup/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, first_name, last_name, gender, institute, specialty, country, city, address, postal_code, phone })
+                })
+                .then(response => {
+                    return response.json().then(data => {
+                        if (!response.ok) {
+                            const error = new Error("Serverdan noto‘g‘ri javob: " + response.status);
+                            error.details = data;
+                            throw error;
+                        }
+                        return data;
+                    });
+                })
+                .then(data => {
+                    showAlert("Tasdiqlash kodi emailingizga yuborildi!", "success");
+                    emailInput.value = "";
+                    first_nameInput.value = "";
+                    last_nameInput.value = "";
+                    genderInput.value = "";
+                    instituteInput.value = "";
+                    specialtyInput.value = "";
+                    countryInput.value = "";
+                    cityInput.value = "";
+                    addressInput.value = "";
+                    postal_codeInput.value = "";
+                    phoneInput.value = "";
+                    registrForm.classList.remove("was-validated");
+                })
+                .catch(error => {
+                    console.error("Xatolik:", error.message);
+                    if (error.details) {
+                        console.error("Batafsil:", error.details);
+                        const errEmail = error.details.email?.[0];
+                        if (errEmail === "user with this email already exists.") {
+                            showAlert("Bu elektron pochta manzili bilan avval ro‘yxatdan o‘tilgan.", "danger");
+                        } else {
+                            showAlert("Xatolik yuz berdi!", "danger");
+                        }
+                    } else {
+                        showAlert("Xatolik yuz berdi!", "danger");
+                    }
+                });
+            });
+        });
+        function showAlert(message, type = "success", duration = 3000) {
+            const box = document.getElementById("message");
+        
+            box.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">${message}</div>`;
+
+            setTimeout(() => {
+                const alert = box.querySelector('.alert');
+                if (alert) {
+                    alert.classList.remove("show");
+                    alert.classList.add("hide");
+                    setTimeout(() => alert.remove(), 300);
+                }
+                }, duration);
+        }
+    </script>
 </body>
 </html>

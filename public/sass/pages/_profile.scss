@@ -1,0 +1,91 @@
+@use "./../abstract/index.scss" as var;
+.profile {
+    h2 {
+        position: relative;
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 0;
+            border-radius: 8px;
+            padding: 4px 10px;
+            color: var.$text-white;
+            background-color: var.$bg-primary;
+        }
+    }
+}
+#informations, #articles {
+    li {
+        span:first-child {
+            display: inline-block;
+            width: 150px;
+        }
+    }
+}
+#articles {
+    #edit-btn {
+        text-decoration: none;
+        padding: 6px 40px;
+        border-radius: 8px;
+        display: inline-block;
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+    }
+    form button,
+    form button:hover,
+    form button:active,
+    form button:focus,
+    form button:focus-visible,
+    .btn:first-child:active {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        border: 0;
+    }
+}
+#add-article {
+    textarea {
+        height: 200px;
+    }
+    form button,
+    form button:hover,
+    form button:active,
+    form button:focus,
+    form button:focus-visible,
+    .btn:first-child:active {
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+        border: 0;
+    }
+}
+.pages {
+    > div a {
+        text-decoration: none;
+        width: 96%;
+        padding: 6px 0;
+        display: inline-block;
+        color: var.$text-white;
+        background-color: var.$bg-primary;
+    }
+    .active-page a {
+        color: var.$text-blue;
+        background-color: var.$bg-white;
+    }
+}
+#message {
+    div {
+        position: fixed;
+        text-align: center;
+        top: 88%;
+        width: fit-content;
+        padding-right: 16px;
+    }
+}
+@media only screen  and (max-width: 767.9px) {
+    #message {
+        div {
+            width: 90%;
+            left: 5%;
+            top: 85%;
+        }
+    }
+}

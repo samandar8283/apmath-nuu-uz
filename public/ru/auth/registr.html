@@ -25,7 +25,7 @@
                 </div>
                 <div class="d-flex justify-content-evenly d-md-block position-relative">
                     <div class="sign-in d-inline-block">
-                        <a class="btn" href="./login.html">Вход</a>
+                        <a class="btn" href="./login.html" id="header-sign-in">Вход</a>
                     </div>
                     <div class="language-menu d-inline-block">
                         <div class="dropdown">
@@ -117,28 +117,101 @@
                     <aside class="registr">
                         <div class="row">
                             <div class="col-md-8">
-                                <form class="row g-3 needs-validation" novalidate>
+                                <form class="row g-3 needs-validation" novalidate id="registr-form">
                                     <div class="col-3 text-center login-action ps-2">
-                                        <a href="./login.html">Kirish</a>
+                                        <a href="./login.html">Вход</a>
                                     </div>
                                     <div class="col-9 text-center registr-action pe-2">
-                                        <a href="./registr.html">Ro'yxatdan o'tish</a>
+                                        <a href="./registr.html">Зарегистрироваться</a>
+                                    </div>
+                                    <div class="col-12 alert alert-info" role="alert">
+                                        Пожалуйста, введите точную и достоверную информацию. Ваши данные будут использоваться для подтверждения аккаунта и связи с вами.
                                     </div>
                                     <div class="col-12">
-                                        <input type="email" class="form-control" id="validationCustom03" placeholder="Email" required>
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                                         <div class="invalid-feedback">
-                                            Please provide a valid city.
+                                            Пожалуйста, введите Email.
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <input type="text" class="form-control" id="validationCustom03" placeholder="Parol" required>
+                                        <label for="firstname" class="form-label">Имя</label>
+                                        <input type="text" class="form-control" id="firstname" placeholder="Имя" required>
                                         <div class="invalid-feedback">
-                                            Please provide a valid city.
+                                            Пожалуйста, введите Имя.
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn w-100" type="submit">Kirish</button>
+                                        <label for="lastname" class="form-label">Фамилия</label>
+                                        <input type="text" class="form-control" id="lastname" placeholder="Фамилия" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Фамилию.
+                                        </div>
                                     </div>
+                                    <div class="col-12">
+                                        <label for="gender" class="form-label">Пол</label>
+                                        <select class="form-select" id="gender" required>
+                                            <option selected disabled value="">Выбирать...</option>
+                                            <option value="male">Мужской</option>
+                                            <option value="female">Женский</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, выберите пол.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="institute" class="form-label">Институт</label>
+                                        <input type="text" class="form-control" id="institute" placeholder="Институт" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Институт.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="specialty" class="form-label">Специальность</label>
+                                        <input type="text" class="form-control" id="specialty" placeholder="Специальность" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Специальность.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="country" class="form-label">Страна</label>
+                                        <input type="text" class="form-control" id="country" placeholder="Страна" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Страну.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="city" class="form-label">Город</label>
+                                        <input type="text" class="form-control" id="city" placeholder="Город" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Город.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="address" class="form-label">Адрес</label>
+                                        <input type="text" class="form-control" id="address" placeholder="Адрес" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Адрес.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="postalcode" class="form-label">Почтовый индекс</label>
+                                        <input type="text" class="form-control" id="postalcode" placeholder="Почтовый индекс" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Почтовый индекс.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label">Телефон</label>
+                                        <input type="text" class="form-control" id="phone" placeholder="Телефон" required>
+                                        <div class="invalid-feedback">
+                                            Пожалуйста, введите Телефон.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn w-100" type="submit">Зарегистрироваться</button>
+                                    </div>
+                                    <div class="col-12" id="message"></div>
                                 </form>
                             </div>
                         </div>
@@ -172,6 +245,107 @@
             });
         });
     </script>
-    <script src="./../../assets/js/main.js"></script>
+    <script src="./../../assets/js/main-auth.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const registrForm = document.getElementById("registr-form");
+            const first_nameInput = document.getElementById("firstname")
+            const last_nameInput = document.getElementById("lastname")
+            const genderInput = document.getElementById("gender")
+            const instituteInput = document.getElementById("institute")
+            const specialtyInput = document.getElementById("specialty")
+            const countryInput = document.getElementById("country")
+            const cityInput = document.getElementById("city")
+            const addressInput = document.getElementById("address")
+            const postal_codeInput = document.getElementById("postalcode")
+            const phoneInput = document.getElementById("phone")
+            const emailInput = document.getElementById("email")
+            const messageBox = document.getElementById("message");
+
+            registrForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Submitni to‘xtatamiz
+
+                // Bootstrap validatsiyasi
+                registrForm.classList.add("was-validated");
+                if (!registrForm.checkValidity()) {
+                    return;
+                }
+
+                const first_name = first_nameInput.value;
+                const last_name = last_nameInput.value;
+                const gender = genderInput.value;
+                const institute = instituteInput.value;
+                const specialty = specialtyInput.value;
+                const country = countryInput.value;
+                const city = cityInput.value;
+                const address = addressInput.value;
+                const postal_code = postal_codeInput.value;
+                const phone = phoneInput.value;
+                const email = emailInput.value;
+                console.log(first_name);
+
+                fetch("http://127.0.0.1:8000/api/signup/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, first_name, last_name, gender, institute, specialty, country, city, address, postal_code, phone })
+                })
+                .then(response => {
+                    return response.json().then(data => {
+                        if (!response.ok) {
+                            const error = new Error("Serverdan noto‘g‘ri javob: " + response.status);
+                            error.details = data;
+                            throw error;
+                        }
+                        return data;
+                    });
+                })
+                .then(data => {
+                    showAlert("Код подтверждения был отправлен на вашу электронную почту!", "success");
+                    emailInput.value = "";
+                    first_nameInput.value = "";
+                    last_nameInput.value = "";
+                    genderInput.value = "";
+                    instituteInput.value = "";
+                    specialtyInput.value = "";
+                    countryInput.value = "";
+                    cityInput.value = "";
+                    addressInput.value = "";
+                    postal_codeInput.value = "";
+                    phoneInput.value = "";
+                    registrForm.classList.remove("was-validated");
+                })
+                .catch(error => {
+                    console.error("Xatolik:", error.message);
+                    if (error.details) {
+                        console.error("Batafsil:", error.details);
+                        const errEmail = error.details.email?.[0];
+                        if (errEmail === "user with this email already exists.") {
+                            showAlert("Пользователь с таким адресом электронной почты уже существует.", "danger");
+                        } else {
+                            showAlert("Упс! Что-то пошло не так. Пожалуйста, попробуйте снова.", "danger");
+                        }
+                    } else {
+                        showAlert("Упс! Что-то пошло не так. Пожалуйста, попробуйте снова.", "danger");
+                    }
+                });
+            });
+        });
+        function showAlert(message, type = "success", duration = 3000) {
+            const box = document.getElementById("message");
+        
+            box.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">${message}</div>`;
+
+            setTimeout(() => {
+                const alert = box.querySelector('.alert');
+                if (alert) {
+                    alert.classList.remove("show");
+                    alert.classList.add("hide");
+                    setTimeout(() => alert.remove(), 300);
+                }
+                }, duration);
+        }
+    </script>
 </body>
 </html>
