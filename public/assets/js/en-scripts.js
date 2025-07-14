@@ -7,7 +7,7 @@ document.querySelectorAll(".language[id]").forEach(function(langBtn) {
         if (!pageClass) return;
 
         let langPath = selectedLang + "/";
-        let targetUrl = langPath + pageClass + ".html";
+        let targetUrl = langPath + pageClass + "";
 
         window.location.href = targetUrl;
     });
