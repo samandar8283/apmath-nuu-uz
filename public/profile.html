@@ -349,8 +349,8 @@
                         document.getElementById("description-info").textContent = userArticle.content;
 
                         const fileLink = document.getElementById("file-info");
-                        fileLink.href = userArticle.file;
-                        fileLink.textContent = "Download file";
+                        fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
+                        fileLink.textContent = userArticle.file;
                         articleNotFound.classList.add("d-none");
                     } else {
                         articleInfo.classList.add("d-none");
@@ -408,7 +408,7 @@
                     document.getElementById("title-info").textContent = updated.title;
                     document.getElementById("description-info").textContent = updated.content;
                     document.getElementById("file-info").href = updated.file;
-                    document.getElementById("file-info").textContent = "Download file";
+                    document.getElementById("file-info").textContent = userArticle.file;
 
                     articlesForm.classList.add("d-none");
                     articleInfo.classList.remove("d-none");
@@ -491,11 +491,6 @@
                                 if (userArticle) {
                                     articleInfo.classList.remove("d-none");
                                     articleNotFound.classList.add("d-none");
-                                    console.log("Muammo shu yerda");
-                                    console.log(userArticle.category.name);
-                                    console.log(userArticle.title);
-                                    console.log(userArticle.content);
-                                    console.log(userArticle.id);
                                     currentArticleId = userArticle.id;
                                     addArticleBtn.classList.add("d-none");
                                     editBtn.classList.remove("d-none");
@@ -504,8 +499,8 @@
                                     document.getElementById("description-info").textContent = userArticle.content;
 
                                     const fileLink = document.getElementById("file-info");
-                                    fileLink.href = userArticle.file;
-                                    fileLink.textContent = "Download file";
+                                    fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
+                                    fileLink.textContent = userArticle.file;
                                 } else {
                                     editBtn.classList.add("d-none");
                                     addArticleBtn.classList.remove("d-none");
@@ -540,8 +535,6 @@
         })
     </script>
     <script>
-        console.log(localStorage.accessToken);
-        console.log(localStorage.refreshToken);
         const user = JSON.parse(localStorage.user);
         document.getElementById("email").textContent = user.email;
         document.getElementById("first-name").textContent = user.first_name;

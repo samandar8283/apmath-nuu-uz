@@ -21,12 +21,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 // === /custom menu js end ===
-
-document.addEventListener('DOMContentLoaded', function () {
-    if(localStorage.getItem("user")) {
-        document.getElementById("header-sign-in").addEventListener("click", function(e) {
-            e.preventDefault();
-            window.location.href = "./profile.html";
-        })
-    }
-});
