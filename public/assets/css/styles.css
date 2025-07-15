@@ -393,7 +393,7 @@ header .row {
 
 #informations li span:first-child, #articles li span:first-child {
   display: inline-block;
-  width: 150px;
+  width: 160px;
 }
 
 #articles #edit-btn {
