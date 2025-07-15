@@ -340,7 +340,7 @@
                         currentArticleId = userArticle.id;
                         addArticleBtn.classList.add("d-none");
                         editBtn.classList.remove("d-none");
-                        document.getElementById("section-info").textContent = userArticle.category.name;
+                        document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${userArticle.category.id}"]`).textContent;
                         document.getElementById("title-info").textContent = userArticle.title;
                         document.getElementById("description-info").textContent = userArticle.content;
 
@@ -400,11 +400,11 @@
                 })
                 .then(updated => {
                     showAlert("Maqola muvaffaqiyatli tahrirlandi!", "success");
-                    document.getElementById("section-info").textContent = updated.category.name;
+                    document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${updated.category.id}"]`).textContent;
                     document.getElementById("title-info").textContent = updated.title;
                     document.getElementById("description-info").textContent = updated.content;
                     document.getElementById("file-info").href = updated.file;
-                    document.getElementById("file-info").textContent = "Faylni yuklab olish";
+                    document.getElementById("file-info").textContent = updated.file;
 
                     articlesForm.classList.add("d-none");
                     articleInfo.classList.remove("d-none");
@@ -490,7 +490,7 @@
                                     currentArticleId = userArticle.id;
                                     addArticleBtn.classList.add("d-none");
                                     editBtn.classList.remove("d-none");
-                                    document.getElementById("section-info").textContent = userArticle.category.name;
+                                    document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${userArticle.category.id}"]`).textContent;
                                     document.getElementById("title-info").textContent = userArticle.title;
                                     document.getElementById("description-info").textContent = userArticle.content;
 
