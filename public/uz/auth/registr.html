@@ -249,7 +249,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             if (localStorage.getItem("user")) {
-                window.location.href = "./../profile.html";
+                window.location.href = "./../profile";
             }
             const registrForm = document.getElementById("registr-form");
             const first_nameInput = document.getElementById("firstname")
@@ -317,7 +317,7 @@
                     postal_codeInput.value = "";
                     phoneInput.value = "";
                     registrForm.classList.remove("was-validated");
-                    window.location.href = "./login.html";
+                    window.location.href = "./login";
                 })
                 .catch(error => {
                     console.error("Xatolik:", error.message);
