@@ -245,9 +245,12 @@
             });
         });
     </script>
-    <script src="./../assets/js/main-auth.js"></script>
+    <script src="./../assets/js/main.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("user")) {
+                window.location.href = "./../profile.html";
+            }
             const registrForm = document.getElementById("registr-form");
             const first_nameInput = document.getElementById("firstname")
             const last_nameInput = document.getElementById("lastname")
@@ -282,7 +285,6 @@
                 const postal_code = postal_codeInput.value;
                 const phone = phoneInput.value;
                 const email = emailInput.value;
-                console.log(first_name);
 
                 fetch("http://127.0.0.1:8000/api/signup/", {
                     method: "POST",
@@ -315,6 +317,7 @@
                     postal_codeInput.value = "";
                     phoneInput.value = "";
                     registrForm.classList.remove("was-validated");
+                    window.location.href = "./login.html";
                 })
                 .catch(error => {
                     console.error("Xatolik:", error.message);
