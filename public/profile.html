@@ -358,7 +358,7 @@
 
                             const fileLink = document.getElementById("file-info");
                             fileLink.href = `http://127.0.0.1:8000/api/maqolalar/${userArticle.id}/download`;
-                            fileLink.textContent = userArticle.file;
+                            fileLink.textContent = userArticle.file.split("/").pop();
                         } else {
                             articleInfo.classList.add("d-none");
                             editBtn.classList.add("d-none");
@@ -419,7 +419,7 @@
                         document.getElementById("title-info").textContent = updated.title;
                         document.getElementById("description-info").textContent = updated.content;
                         document.getElementById("file-info").href = updated.file;
-                        document.getElementById("file-info").textContent = updated.file;
+                        document.getElementById("file-info").textContent = updated.file.split("/").pop();
 
                         articlesForm.classList.add("d-none");
                         articleInfo.classList.remove("d-none");
