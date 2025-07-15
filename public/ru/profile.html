@@ -352,7 +352,7 @@
                             document.getElementById("description-info").textContent = userArticle.content;
 
                             const fileLink = document.getElementById("file-info");
-                            fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
+                            fileLink.href = `http://127.0.0.1:8000/api/maqolalar/${userArticle.id}/download`;
                             fileLink.textContent = userArticle.file;
                         } else {
                             articleInfo.classList.add("d-none");
