@@ -290,75 +290,86 @@
     <script src="./../assets/js/uz-ru-scripts.js"></script>
     <script src="./../assets/js/main.js"></script>
     <script>
-        document.querySelectorAll('a[data-target]').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                document.querySelectorAll('#informations, #articles, #add-article').forEach(div => {
-                    div.classList.add('d-none');
-                });
-
-                document.querySelectorAll('.informations-btn, .articles-btn, .add-article-btn').forEach(btn => {
-                    btn.classList.remove('active-page');
-                });
-
-                const targetId = this.getAttribute('data-target');
-                const targetDiv = document.getElementById(targetId);
-                if (targetDiv) {
-                    targetDiv.classList.remove('d-none');
-                }
-
-                this.parentElement.classList.add('active-page');
-            });
-        });
-
-    </script>
-    <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("log-out").addEventListener("click", function() {
-                localStorage.removeItem("user");
-                window.location.href = "./auth/login";
-            })
-            if (!localStorage.getItem("user")) {
-                window.location.href = "./auth/login";
+            // === Auth tekshirish ===
+            const user = JSON.parse(localStorage.getItem("user"));
+            if (!user) {
+                window.location.href = "./auth/login.html";
+                return;
             }
-            const userId = JSON.parse(localStorage.user).id;
+
+            document.getElementById("log-out").addEventListener("click", function () {
+                localStorage.removeItem("user");
+                window.location.href = "./auth/login.html";
+            });
+
+            // === Navbar navigatsiyasi ===
+            document.querySelectorAll('a[data-target]').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelectorAll('#informations, #articles, #add-article').forEach(div => {
+                        div.classList.add('d-none');
+                    });
+
+                    document.querySelectorAll('.informations-btn, .articles-btn, .add-article-btn').forEach(btn => {
+                        btn.classList.remove('active-page');
+                    });
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetDiv = document.getElementById(targetId);
+                    if (targetDiv) targetDiv.classList.remove('d-none');
+
+                    this.parentElement.classList.add('active-page');
+                });
+            });
+
+            // === Maqola holatini yuklash ===
+            const userId = user.id;
             const apiUrl = "http://127.0.0.1:8000/api/maqola";
             const editBtn = document.getElementById("edit-btn");
             const articlesForm = document.getElementById("articles-form");
             const articleInfo = document.getElementById("article-info");
             const articleNotFound = document.getElementById("article-not-found");
-            const messageDiv = document.getElementById("message");
             const addArticleBtn = document.getElementById("add-article-btn");
+
             let currentArticleId = null;
 
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    const userArticle = data.find(article => article.author.id === userId);
-                    if (userArticle) {
-                        currentArticleId = userArticle.id;
-                        addArticleBtn.classList.add("d-none");
-                        editBtn.classList.remove("d-none");
-                        document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${userArticle.category.id}"]`).textContent;
-                        document.getElementById("title-info").textContent = userArticle.title;
-                        document.getElementById("description-info").textContent = userArticle.content;
+            function loadUserArticle() {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const userArticle = data.find(article => article.author.id === userId);
+                        if (userArticle) {
+                            currentArticleId = userArticle.id;
+                            addArticleBtn.classList.add("d-none");
+                            editBtn.classList.remove("d-none");
+                            articleInfo.classList.remove("d-none");
+                            articleNotFound.classList.add("d-none");
 
-                        const fileLink = document.getElementById("file-info");
-                        fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
-                        fileLink.textContent = userArticle.file;
-                        articleNotFound.classList.add("d-none");
-                    } else {
-                        articleInfo.classList.add("d-none");
-                        editBtn.classList.add("d-none");
-                        addArticleBtn.classList.remove("d-none");
-                        articleNotFound.innerHTML = "Siz hali hech qanday maqola yaratmagansiz.";
-                    }
-                })
-                .catch(error => {
-                    console.error("Xatolik yuz berdi:", error);
-                });
+                            document.getElementById("section-info").textContent =
+                                document.getElementById("section").querySelector(`option[value="${userArticle.category.id}"]`).textContent;
+                            document.getElementById("title-info").textContent = userArticle.title;
+                            document.getElementById("description-info").textContent = userArticle.content;
 
+                            const fileLink = document.getElementById("file-info");
+                            fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
+                            fileLink.textContent = userArticle.file;
+                        } else {
+                            articleInfo.classList.add("d-none");
+                            editBtn.classList.add("d-none");
+                            addArticleBtn.classList.remove("d-none");
+                            articleNotFound.innerHTML = "Siz hali hech qanday maqola yaratmagansiz.";
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Xatolik yuz berdi:", error);
+                    });
+            }
+
+            loadUserArticle();
+
+            // === Tahrirlash bosqichi ===
             editBtn.addEventListener("click", function (e) {
                 e.preventDefault();
                 editBtn.classList.add("d-none");
@@ -384,56 +395,40 @@
                 formData.append("title", document.getElementById("title-article").value);
                 formData.append("content", document.getElementById("description-article").value);
                 formData.append("category_id", document.getElementById("section-article").value);
+
                 const fileInput = document.getElementById('file-article');
                 if (fileInput && fileInput.files.length > 0) {
-                    const file = fileInput.files[0];
+                    formData.append("file", fileInput.files[0]);
                 }
+
                 fetch(`${apiUrl}/${currentArticleId}/`, {
                     method: "PATCH",
                     body: formData,
                 })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Tahrirlashda xatolik yuz berdi");
-                    }
-                    return response.json();
-                })
-                .then(updated => {
-                    showAlert("Maqola muvaffaqiyatli tahrirlandi!", "success");
-                    document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${updated.category.id}"]`).textContent;
-                    document.getElementById("title-info").textContent = updated.title;
-                    document.getElementById("description-info").textContent = updated.content;
-                    document.getElementById("file-info").href = updated.file;
-                    document.getElementById("file-info").textContent = updated.file;
+                    .then(response => {
+                        if (!response.ok) throw new Error("Tahrirlashda xatolik yuz berdi");
+                        return response.json();
+                    })
+                    .then(updated => {
+                        showAlert("Maqola muvaffaqiyatli tahrirlandi!", "success");
+                        document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${updated.category.id}"]`).textContent;
+                        document.getElementById("title-info").textContent = updated.title;
+                        document.getElementById("description-info").textContent = updated.content;
+                        document.getElementById("file-info").href = updated.file;
+                        document.getElementById("file-info").textContent = updated.file;
 
-                    articlesForm.classList.add("d-none");
-                    articleInfo.classList.remove("d-none");
-                    editBtn.classList.remove("d-none");
-                })
-                .catch(error => {
-                    console.log(error.message);
-                    showAlert("Xatolik yuz berdi!", "danger");
-                });
+                        articlesForm.classList.add("d-none");
+                        articleInfo.classList.remove("d-none");
+                        editBtn.classList.remove("d-none");
+                    })
+                    .catch(error => {
+                        console.log(error.message);
+                        showAlert("Xatolik yuz berdi!", "danger");
+                    });
             });
-        });
-        function showAlert(message, type = "success", duration = 3000) {
-            const box = document.getElementById("message");
-        
-            box.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">${message}</div>`;
 
-            setTimeout(() => {
-                const alert = box.querySelector('.alert');
-                if (alert) {
-                    alert.classList.remove("show");
-                    alert.classList.add("hide");
-                    setTimeout(() => alert.remove(), 300);
-                }
-                }, duration);
-        }
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById('add-article-form').addEventListener('submit', async function (e) {
+            // === Yangi maqola qo‘shish ===
+            document.getElementById('add-article-form').addEventListener('submit', async function (e) {
                 e.preventDefault();
                 const form = this;
 
@@ -442,22 +437,15 @@
                     return;
                 }
 
-                const author_id = parseInt(JSON.parse(localStorage.user).id);
-                const category_id = parseInt(document.getElementById('section').value);
-                const title = document.getElementById('title').value;
-                const content = document.getElementById('description').value;
-                const file = document.getElementById("file").files[0];
-                const messageDiv = document.getElementById('message');
-
                 const formData = new FormData();
-                formData.append('author_id', author_id);
-                formData.append('category_id', category_id);
-                formData.append('title', title);
-                formData.append('content', content);
-                formData.append('file', file);
+                formData.append('author_id', userId);
+                formData.append('category_id', document.getElementById('section').value);
+                formData.append('title', document.getElementById('title').value);
+                formData.append('content', document.getElementById('description').value);
+                formData.append('file', document.getElementById("file").files[0]);
 
                 try {
-                    const response = await fetch('http://127.0.0.1:8000/api/maqola/', {
+                    const response = await fetch(apiUrl + '/', {
                         method: 'POST',
                         body: formData
                     });
@@ -465,47 +453,16 @@
                     const data = await response.json();
 
                     if (response.ok) {
-                        showAlert("Maqola muvaffaqiyatli yaratildi.", "success");
+                        showAlert("Maqola muvaffaqiyatli yaratildi!", "success");
                         form.reset();
                         form.classList.remove('was-validated');
+
                         document.getElementById("articles").classList.remove("d-none");
                         document.getElementById("add-article").classList.add("d-none");
-                        document.getElementsByClassName("articles-btn")[0].classList.add("active-page");
+                        document.querySelector(".articles-btn").classList.add("active-page");
                         document.getElementById("add-article-btn").classList.add("d-none");
-                        const userId = JSON.parse(localStorage.user).id;
-                        const apiUrl = "http://127.0.0.1:8000/api/maqola";
-                        const editBtn = document.getElementById("edit-btn");
-                        const articlesForm = document.getElementById("articles-form");
-                        const articleInfo = document.getElementById("article-info");
-                        const articleNotFound = document.getElementById("article-not-found");
-                        const addArticleBtn = document.getElementById("add-article-btn");
-                        let currentArticleId = null;
-                        fetch(apiUrl)
-                            .then(response => response.json())
-                            .then(data => {
-                                const userArticle = data.find(article => article.author.id === userId);
-                                if (userArticle) {
-                                    articleInfo.classList.remove("d-none");
-                                    articleNotFound.classList.add("d-none");
-                                    currentArticleId = userArticle.id;
-                                    addArticleBtn.classList.add("d-none");
-                                    editBtn.classList.remove("d-none");
-                                    document.getElementById("section-info").textContent = document.getElementById("section").querySelector(`option[value="${userArticle.category.id}"]`).textContent;
-                                    document.getElementById("title-info").textContent = userArticle.title;
-                                    document.getElementById("description-info").textContent = userArticle.content;
 
-                                    const fileLink = document.getElementById("file-info");
-                                    fileLink.href = `http://127.0.0.1:8000/api/api/maqolalar/${userArticle.id}/download`;
-                                    fileLink.textContent = userArticle.file;
-                                } else {
-                                    editBtn.classList.add("d-none");
-                                    addArticleBtn.classList.remove("d-none");
-                                    articleNotFound.innerHTML = "Siz hali hech qanday maqola yaratmagansiz.";
-                                }
-                            })
-                            .catch(error => {
-                                console.error("Xatolik yuz berdi:", error);
-                            });
+                        loadUserArticle();
                     } else {
                         showAlert("Xatolik yuz berdi!", "danger");
                     }
@@ -514,9 +471,10 @@
                     console.error(error);
                 }
             });
+
+            // === showAlert funksiyasi ===
             function showAlert(message, type = "success", duration = 3000) {
                 const box = document.getElementById("message");
-            
                 box.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">${message}</div>`;
 
                 setTimeout(() => {
@@ -526,23 +484,22 @@
                         alert.classList.add("hide");
                         setTimeout(() => alert.remove(), 300);
                     }
-                    }, duration);
+                }, duration);
             }
-        })
-    </script>
-    <script>
-        const user = JSON.parse(localStorage.user);
-        document.getElementById("email").textContent = user.email;
-        document.getElementById("first-name").textContent = user.first_name;
-        document.getElementById("last-name").textContent = user.last_name;
-        document.getElementById("gender").textContent = user.gender;
-        document.getElementById("institute").textContent = user.institute;
-        document.getElementById("specialty").textContent = user.specialty;
-        document.getElementById("country").textContent = user.country;
-        document.getElementById("city").textContent = user.city;
-        document.getElementById("address").textContent = user.address;
-        document.getElementById("postal-code").textContent = user.postal_code;
-        document.getElementById("phone").textContent = user.phone;
+
+            // === Profil ma’lumotini ko‘rsatish ===
+            document.getElementById("email").textContent = user.email;
+            document.getElementById("first-name").textContent = user.first_name;
+            document.getElementById("last-name").textContent = user.last_name;
+            document.getElementById("gender").textContent = user.gender;
+            document.getElementById("institute").textContent = user.institute;
+            document.getElementById("specialty").textContent = user.specialty;
+            document.getElementById("country").textContent = user.country;
+            document.getElementById("city").textContent = user.city;
+            document.getElementById("address").textContent = user.address;
+            document.getElementById("postal-code").textContent = user.postal_code;
+            document.getElementById("phone").textContent = user.phone;
+        });
     </script>
 </body>
 </html>
